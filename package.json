@@ -1,0 +1,99 @@
+{
+  "name": "material-ui-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint src --max-warnings=0",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --watchAll --coverage",
+    "test:ci": "cross-env CI=true react-scripts test --coverage",
+    "storybook": "start-storybook -p 9009 -s public",
+    "storybook:build": "build-storybook -s public"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
+    "axios": "^0.19.2",
+    "clsx": "^1.1.1",
+    "history": "^5.0.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-query": "^1.5.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.1",
+    "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.19",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.1.3",
+    "@storybook/react": "^5.3.19",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/styled-components": "^5.1.1",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "cross-env": "^7.0.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.7",
+    "http-proxy-middleware": "^1.0.4",
+    "husky": "^4.2.5",
+    "jest-mock-axios": "^4.2.0",
+    "jest-styled-components": "^7.0.2",
+    "lint-staged": "^10.2.7",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.5.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-prettier": "^1.1.2"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npm run lint:fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.stories.tsx",
+      "!src/serviceWorker.ts",
+      "!src/setupTests.ts",
+      "!src/setupProxy.js",
+      "!src/index.tsx"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
